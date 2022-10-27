@@ -33,25 +33,25 @@
       <span class="close-menu icon-cross2 right-boxed"></span>
       <ul class="menu-list right-boxed">
         <li  data-menuanchor="page1">
-          <a  href="#page1">Home</a>
+          <a  href="#home">Home</a>
         </li>
         <li  data-menuanchor="page2">
-          <a href="#page2">Specialization</a>
+          <a href="#specialization">Specialization</a>
         </li>
         <li  data-menuanchor="page3">
-          <a href="#page3">Resume</a>
+          <a href="#resume">Resume</a>
         </li>
         <li  data-menuanchor="page4">
-          <a href="#page4">About</a>
+          <a href="#about">About</a>
         </li>
         <li  data-menuanchor="page5">
-          <a href="#page5">Projects</a>
+          <a href="#projects">Projects</a>
         </li>
         <li  data-menuanchor="page7">
-          <a href="#page7">Testimonials</a>
+          <a href="#testimonials">Testimonials</a>
         </li>
         <li  data-menuanchor="page8">
-          <a href="#page8">Contact</a>
+          <a href="#contact">Contact</a>
         </li>
       </ul>
       <div class="menu-footer right-boxed">
@@ -62,7 +62,7 @@
           <a href="" class="icon ion-social-linkedin"></a>
           <a href="" class="icon ion-social-dribbble-outline"></a>
         </div>
-        <div class="copy">© Ramsay 2019. All Rights Reseverd</div>
+        <div class="copy">© Christoforakis Panagiotis 2019.</br>All Rights Reseverd.</div>
       </div>
     </div>
 
@@ -70,10 +70,10 @@
 
     <header class="navbar navbar-fullpage boxed">
       <div class="navbar-bg"></div>
-      <a class="brand" href="#">
+      <a class="brand" href="#home">
         <img alt="" src="images/brand.png">
         <div class="brand-info">
-          <div class="brand-name">Ramsay</div>
+          <div class="brand-name">Christoforakis Panagiotis</div>
         </div>
       </a>
 
@@ -85,7 +85,7 @@
       
       <div class="contacts d-none d-md-block">
         <div class="contact-item">
-          +96 56-85-1379
+          <a href="tell:6988083298">6988083298</a>
         </div>
         <div class="contact-item spacer">
           /
@@ -94,8 +94,17 @@
           <a href="mailto:contact@Ramsay.com">contact@Ramsay.com</a>
         </div>
       </div>
+
+      <!-- <div class="contacts social-list ">
+        <a href="" class="icon ion-social-twitter"></a>
+        <a href="" class="icon ion-social-facebook"></a>
+        <a href="" class="icon ion-social-googleplus"></a>
+        <a href="" class="icon ion-social-linkedin"></a>
+        <a href="" class="icon ion-social-dribbble-outline"></a>
+      </div> -->
+
     </header>
-    <div class="copy-bottom white boxed">© Ramsay 2019.</div>
+    <div class="copy-bottom white boxed">© Christoforakis Panagiotis 2019. All Rights Reseverd.</div>
     <div class="social-list social-list-bottom boxed">
         <a href="" class="icon ion-social-twitter"></a>
         <a href="" class="icon ion-social-facebook"></a>
@@ -115,8 +124,12 @@
                     <div class="intro">
                       <div class="row">
                         <div class="col-md-8 col-lg-6">
-                          <h1 class="display-2 text-white  wow fadeIn" data-wow-delay="0.1s"><span class="text-primary">Howdy,</span> I'm Ramsay</h1>
-                          <a class="popup-youtube"  href="http://www.youtube.com/watch?v=0O2aH4XLbto"><span class="icon ion-ios-play"></span>Watch video </a>
+                          <h1 class="display-2 text-white  wow fadeIn" data-wow-delay="0.1s"><span class="text-primary">Howdy,</span> I'm Panagiotis.</br>Freelancer</h1>
+                          <!-- <a class="popup-youtube"  href="http://www.youtube.com/watch?v=0O2aH4XLbto"><span class="icon ion-ios-play"></span>Watch video </a> -->
+                          <a class="popup-youtube"><span class="icon ion-code"></span><span
+                            class="txt-rotate"
+                            data-period="2000"
+                            data-rotate='[ "designer.", "creator.", "developer.", "manager.", "mentor." ]'></span></a>
                         </div>
                       </div>
                     </div>
@@ -575,5 +588,65 @@
 
 <!-- Scripts -->
 <script src="js/scripts.js"></script> 
+<script>
+  var TxtRotate = function(el, toRotate, period) {
+	this.toRotate = toRotate;
+	this.el = el;
+	this.loopNum = 0;
+	this.period = parseInt(period, 10) || 2000;
+	this.txt = '';
+	this.tick();
+	this.isDeleting = false;
+  };
+  
+  TxtRotate.prototype.tick = function() {
+	var i = this.loopNum % this.toRotate.length;
+	var fullTxt = this.toRotate[i];
+  
+	if (this.isDeleting) {
+	  this.txt = fullTxt.substring(0, this.txt.length - 1);
+	} else {
+	  this.txt = fullTxt.substring(0, this.txt.length + 1);
+	}
+  
+	this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+  
+	var that = this;
+	var delta = 300 - Math.random() * 100;
+
+	if (this.isDeleting) { delta /= 2; }
+  
+	if (!this.isDeleting && this.txt === fullTxt) {
+	  delta = this.period;
+	  this.isDeleting = true;
+	} else if (this.isDeleting && this.txt === '') {
+	  this.isDeleting = false;
+	  this.loopNum++;
+	  delta = 500;
+	}
+  
+	setTimeout(function() {
+	  that.tick();
+	}, delta);
+  };
+  
+  window.onload = function() {
+	var elements = document.getElementsByClassName('txt-rotate');
+
+	for (var i=0; i<elements.length; i++) {
+	  var toRotate = elements[i].getAttribute('data-rotate');
+	  var period = elements[i].getAttribute('data-period');
+    
+	  if (toRotate) {
+		new TxtRotate(elements[i], JSON.parse(toRotate), period);
+	  }
+	}
+	// INJECT CSS
+	var css = document.createElement("style");
+	css.type = "text/css";
+	css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #FFFFFF }";
+	document.body.appendChild(css);
+  };
+</script>
 </body>
 </html>

@@ -383,7 +383,7 @@ label.error{
   display: inline-block;
 }
 
-.ion-ios-play{
+.ion-code{
   position:relative;
   width: 5rem;
   height: 5rem;
@@ -399,12 +399,12 @@ label.error{
   transition: all .3s ease-out;
 }
 
-.ion-ios-play:hover{
+.ion-code:hover{
   color: #c32865;
   border: 1px solid #c32865;
 }
 
-.ion-ios-play:after {
+.ion-code:after {
   content: '';
   position: absolute;
   right: 100%;
@@ -674,7 +674,7 @@ a.brand:focus{
   position: absolute;
   z-index: 10;
   right:0;
-  bottom:2.4rem;
+  bottom: 6rem;
   color: #000;
 }
 
@@ -967,7 +967,7 @@ a.brand:focus{
   display: none;
   position: absolute;
   z-index: 10;
-  left:0;
+  right:0;
   bottom:2.4rem;
   color: #000;
 }
@@ -1252,7 +1252,7 @@ a.brand:focus{
 .popup-youtube{
   display:inline-block;
   color:#fff;
-  font-size: 1.26rem;
+  font-size: 3.00rem;
 }
 
 .popup-youtube:hover{
@@ -1948,13 +1948,21 @@ a.brand:focus{
 
 
 /* 5.1 Min width 576px */
-
+@media (max-width: 480px){
+  .display-2{
+    font-size: 4.5rem;
+  }
+}
 
 
 @media (min-width: 576px){
 
   .menu{
     width:50%;
+  }
+
+  .display-2{
+    font-size: 4.5rem;
   }
 }
 
@@ -1969,7 +1977,9 @@ a.brand:focus{
     font-size: 13px;
   }
 
-
+  .display-2{
+    font-size: 4.5rem;
+  }
 
   /* Sidebar Menu */
 
