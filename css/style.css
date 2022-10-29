@@ -828,7 +828,7 @@ a.brand:focus{
   overflow-x:hidden;
   overflow-y:auto;
   -webkit-overflow-scrolling:touch;
-  overflow-scrolling:touch;
+  /* overflow-scrolling:touch; */
   font-weight: 600;
   letter-spacing: -0.025rem;
   list-style: none;
