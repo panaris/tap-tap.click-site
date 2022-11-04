@@ -559,19 +559,18 @@ label.error{
 
 
 
-.navbar{ 
+.navbar{
   position: absolute;
   display:block;
   z-index: 101;
   left:0;
   top:0;
   width:100%;
-  padding-top: 2rem;
+  padding-top: 2.rem;
   padding-bottom: 2rem;
   color: #fff;
   margin:0;
   border-radius: 0;
-  
 }
 
 .navbar-bg{
@@ -639,13 +638,13 @@ a.brand:focus{
 .brand-name{
   font-weight: 600;
   font-size: 1.714rem;
-  line-height: 1;
+  line-height: 1.5;
 }
 
 .brand-text{
   font-size: 0.857rem;
   font-weight: 300;
-  margin-top: -0.3rem; 
+  /* margin-top: -0.3rem;  */
 }
 
 .navbar-toggle{
