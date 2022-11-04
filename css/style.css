@@ -638,7 +638,7 @@ a.brand:focus{
 .brand-name{
   font-weight: 600;
   font-size: 1.714rem;
-  line-height: 1.5;
+  /* line-height: 1.5; */
 }
 
 .brand-text{
